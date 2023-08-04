@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function redirect(){
-        $isAdmin=Auth::user()->isAdmin;
-        if($isAdmin){
+        if(Auth::user()->isAdmin ?? false){
             return view('admin.home');
         }else{
             return redirect()->route('/');

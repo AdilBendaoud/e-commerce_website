@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('user.home');})->name('/');
 
-Route::get('/redirect',[HomeController::class,'redirect']);
+Route::get('/redirect',[HomeController::class,'redirect'])->name('redirect');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () { 
         return view('dashboard');})->name('dashboard');
+
+    Route::get('/showAdmins',[AdminController::class,'index'])->name('admin.index');
+    Route::post('/addAdmin',[AdminController::class,'addAdmin'])->name('admin.add');
+    Route::delete('/deleteAdmin/{id}',[AdminController::class,'destroy'])->name('admin.destroy');
 });
