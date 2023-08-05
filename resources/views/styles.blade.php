@@ -22,4 +22,13 @@
     #myTable_paginate{
         padding: 0 5px;
     }
+    .admin-nav-link:hover div{
+        background-color:rgba(255, 255, 255,0.1);
+    }
+    .admin-nav-link:hover div span{
+        color:white;
+    }
+    .admin-nav-link:hover div i{
+        color:white !important;
+    }
 </style>

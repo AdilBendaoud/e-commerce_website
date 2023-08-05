@@ -115,11 +115,43 @@
                             <td class=" text-capitalize">{{ $admin->last_name }}</td>
                             <td>{{ $admin->email }}</td>
                             <td>
-                                <button class="btn btn-secondary">
+                                <button class="btn btn-secondary" data-toggle="modal" data-target="#adminModal{{ $admin->id }}">
                                     <i class="fa-solid fa-eye" style="color: #ffffff;"></i>
                                 </button>
-                                <button data-toggle="modal" data-target="#confirmDeleteModal{{ $admin->id }}" class="btn btn-danger"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
                                 
+                                <button data-toggle="modal" data-target="#confirmDeleteModal{{ $admin->id }}" class="btn btn-danger">
+                                    <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                                </button>
+                                
+                                <!-- User Information Modal -->
+                                <div class="modal fade" id="adminModal{{ $admin->id }}" tabindex="-1" role="dialog" aria-labelledby="adminModalLabel{{ $admin->id }}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="adminModalLabel{{ $admin->id }}">admin Information</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="flex  justify-content-center mb-3">
+                                                    <img class="h-25 w-25 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                                </div>
+                                                <p class=" text-capitalize"><strong>First Name:</strong> {{ $admin->first_name }}</p>
+                                                <p class="text-capitalize"><strong>Last Name:</strong> {{ $admin->last_name }}</p>
+                                                <p><strong>Email:</strong> {{ $admin->email }}</p>
+                                                <p><strong>Phone Number:</strong> {{ $admin->phone_number }}</p>
+                                                <p><strong>Address:</strong> {{ $admin->address}}</p>
+                                                <p><strong>Created At:</strong> {{ \Carbon\Carbon::parse($admin->created_at)->format('j F Y') }} </p>
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <!-- Delete admin Modal -->
                                 <div class="modal fade" id="confirmDeleteModal{{ $admin->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
