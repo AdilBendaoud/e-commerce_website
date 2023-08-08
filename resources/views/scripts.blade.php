@@ -56,3 +56,48 @@
                 toastr.warning("{{ session('warning') }}");
         </script>
 @endif
+
+<script>
+    document.getElementById('cover_image').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.innerHTML = `<img src="${e.target.result}" class="mx-auto" alt="Preview Image">`;
+            imagePreview.childNodes[0].style.height="150px"
+        };
+
+        reader.readAsDataURL(file);
+    }
+    });
+
+    document.getElementById('additional_images').addEventListener('change', function (event) {
+    const files = event.target.files;
+
+    if (files) {
+        const imagePreview = document.getElementById('additional_images_Preview');
+        imagePreview.style.display="flex";
+        imagePreview.style.flexWrap="wrap";
+        imagePreview.style.justifyContent="center";
+        imagePreview.innerHTML = '';
+
+        for (let i = 0; i < files.length; i++){
+            const file = files[i];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const image = document.createElement('img');
+                image.src = e.target.result;
+                image.alt = 'Preview Image';
+                image.style.height = '150px';
+                imagePreview.appendChild(image);
+            };
+
+            reader.readAsDataURL(file);
+        }
+    }
+    });
+</script>

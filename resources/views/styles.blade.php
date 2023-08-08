@@ -31,4 +31,10 @@
     .admin-nav-link:hover div i{
         color:white !important;
     }
+    
+    .hideSpin::-webkit-inner-spin-button,
+    .hideSpin::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
 </style>

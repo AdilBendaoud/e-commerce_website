@@ -18,6 +18,14 @@
             <x-sidebar-link :active="request()->routeIs('admin.index')" :link="'admin.index'" :icon="'fa-solid fa-user-group'">
                 {{__( 'Admins' )}}
             </x-sidebar-link>
+
+            <x-sidebar-link :active="request()->routeIs('admin.products')" :link="'admin.products'" :icon="'fa-solid fa-box'">
+                {{__( 'Products' )}}
+            </x-sidebar-link>
+
+            <x-sidebar-link :active="request()->routeIs('category.index')" :link="'category.index'" :icon="'fa-solid fa-tags'">
+                {{__( 'Categories' )}}
+            </x-sidebar-link>
         </div>
         <div class="mx-auto rounded-2" style="width:90%;background-color:#c0392b;">
             <form method="POST" action="{{ route('logout') }}" x-data>
