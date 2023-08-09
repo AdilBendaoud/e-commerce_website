@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Illuminate\Support\Str;
 use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
 use App\Models\Categorie;
+use Illuminate\Support\Str;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
 {
@@ -29,9 +30,7 @@ class ProductController extends Controller
 
     public function indexAdmin()
     {
-        $products = Product::with(['images' => function ($query) {
-            $query->where('cover', true);
-        }])->get();
+        $products = Product::with('images')->get();
         $categories = Categorie::all();
         return view('admin.products',compact('products','categories'));
     }
@@ -61,10 +60,11 @@ class ProductController extends Controller
     
         $coverImage = $request->file('cover_image');
         $coverImageName = $coverImage->getClientOriginalName();
-        $coverImage->storeAs('public/products/' . $product->id, $dateTimeFormatted . '_' . $coverImageName);
+        $cleanedImageName = str_replace(' ', '-', $coverImageName);
+        $coverImage->storeAs('public/products/' . $product->id, $dateTimeFormatted . '_' . $cleanedImageName);
         
         $image1 = new ProductImage();
-        $image1->image_path = 'storage/products/' . $product->id . '/' . $dateTimeFormatted . '_' . $coverImageName;
+        $image1->image_path = 'storage/products/' . $product->id . '/' . $dateTimeFormatted . '_' . $cleanedImageName;
         $image1->product_id = $product->id;
         $image1->cover = true;
         $image1->save();
@@ -107,7 +107,55 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $product->name = $request->name;
+        $product->slug = Str::slug($request->name);
+        $product->description = $request->description;
+        $product->categorie_id= $request->category;
+        $product->list_price = $request->list_price;
+        $product->sale_price = $request->sale_price;
+        $product->quantity = $request->quantity;
+        $product->save();
+
+        $currentDateTime = Carbon::now();
+        $dateTimeFormatted = $currentDateTime->format('d-m-Y');
+        
+        if($request->hasFile('cover_image')){
+            $oldCoverImage = ProductImage::where(['product_id'=>$product->id,'cover'=>true])->first();
+            $cleanedUrl = preg_replace('/^storage\//', '', $oldCoverImage->image_path);
+            
+            if (Storage::exists('/public'.$request->image_url)){
+                Storage::delete('/public/' . $cleanedUrl);
+                $oldCoverImage->delete();
+            }else{
+                return redirect()->back()->with('error','image not found');
+            }
+        
+            $coverImage = $request->file('cover_image');
+            $coverImageName = $coverImage->getClientOriginalName();
+            $cleanedImageName = str_replace(' ', '-', $coverImageName);
+            $coverImage->storeAs('public/products/' . $product->id, $dateTimeFormatted . '_' . $cleanedImageName);
+            
+            $image1 = new ProductImage();
+            $image1->image_path = 'storage/products/' . $product->id . '/' . $dateTimeFormatted . '_' . $cleanedImageName;
+            $image1->product_id = $product->id;
+            $image1->cover = true;
+            $image1->save();
+        }
+
+        if ($request->hasFile('additional_images')) {
+            foreach ($request->file('additional_images') as $additionalImage) {
+                $additionalImageName = $additionalImage->getClientOriginalName();
+                $additionalImage->storeAs('public/products/' . $product->id, $dateTimeFormatted . '_' . $additionalImageName);
+                
+                $image2 = new ProductImage();
+                $image2->image_path = 'storage/products/'. $product->id . '/' . $dateTimeFormatted . '_' . $additionalImageName;
+                $image2->product_id = $product->id;
+                $image2->cover = false;
+                $image2->save();
+            }
+        }
+        
+        return redirect()->back()->with('success', 'Product updated successfully.');
     }
 
     /**
@@ -120,5 +168,20 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->back()->with('success', 'Product deleted successfully.');
+    }
+
+    public function showProductInfo(Product $product){
+        return response()->json(['product'=>$product]);
+    }
+
+    public function destroyImage(Request $request){
+        if (Storage::exists('/public'.$request->image_url)) {
+            $imageToDelete = ProductImage::where('image_path','storage'.$request->image_url)->first();
+            $imageToDelete->delete();
+            Storage::delete('/public' . $request->image_url);
+            return response()->json(['message' => 'Image deleted successfully']);
+        } else {
+            return response()->json(['message' => 'Image not found']);
+        }
     }
 }

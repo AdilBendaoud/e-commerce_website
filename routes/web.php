@@ -30,7 +30,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::delete('/deleteAdmin/{id}',[AdminController::class,'destroy'])->name('destroy');
         Route::get('/admin_products',[ProductController::class,'indexAdmin'])->name('products');
     });
-
+    
+    Route::delete('/deleteImage',[ProductController::class,'destroyImage'])->name('delete.image');
+    Route::get('/productsInfo/{product}',[ProductController::class,'showProductInfo'])->name('products.info');
+    
     Route::group(['prefix' => 'categories', 'as' => 'category.'],function(){
         Route::get('/',[CategorieController::class,'index'])->name('index');
         Route::post('/store',[CategorieController::class,'store'])->name('store');

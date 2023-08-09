@@ -37,4 +37,26 @@
         -webkit-appearance: none;
         margin: 0;
     }
+    .closeBtn{
+        background-color: red;
+        color: white;
+        position: absolute;
+        top:-10px;
+        right: -10px;;
+        width: 22px;
+        height: 23px;
+        border-radius: 100%;
+        border: none; /* Remove default button border */
+        cursor: pointer;
+    }
+    .mydiv{
+        position: relative;
+        display: inline-block;
+    }
+    .x{
+        position: relative;
+        top: -10px;
+        right: 0px;
+        font-size: 24px;
+    }
 </style>
