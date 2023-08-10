@@ -26,6 +26,10 @@
             <x-sidebar-link :active="request()->routeIs('category.index')" :link="'category.index'" :icon="'fa-solid fa-tags'">
                 {{__( 'Categories' )}}
             </x-sidebar-link>
+            
+            <x-sidebar-link :active="request()->routeIs('orders.index')" :link="'orders.index'" :icon="'fa-solid fa-bag-shopping'">
+                {{__( 'Orders' )}}
+            </x-sidebar-link>
         </div>
         <div class="mx-auto rounded-2" style="width:90%;background-color:#c0392b;">
             <form method="POST" action="{{ route('logout') }}" x-data>

@@ -59,4 +59,53 @@
         right: 0px;
         font-size: 24px;
     }
+    .order_details p{
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+    .table-container {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .table-row {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding: 5px 0;
+    }
+
+    .table-cell {
+        flex: 1;
+        padding: 5px;
+    }
+    .onHold{
+        background-color: #f9dd9f;
+        color: rgb(216, 139, 0);
+    }
+
+    .processing{
+        background-color: #b5e1c9;
+        color: #358422;
+    }
+
+    .shipped{
+        background-color: #c3d7e2;
+        color: #274457;
+    }
+
+    .switch-order-status{
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px 10px;
+    }
+
+    .switch-order-status:hover{
+        border-color: gray;
+    }
+
+    
+
 </style>

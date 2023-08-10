@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -34,6 +35,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::delete('/deleteImage',[ProductController::class,'destroyImage'])->name('delete.image');
     Route::get('/productsInfo/{product}',[ProductController::class,'showProductInfo'])->name('products.info');
     
+
+    Route::group(['prefix'=>'orders','as'=>'orders.'],function(){
+        Route::get('/',[OrderController::class,'index'])->name('index');
+        Route::post('/{order}/processing',[OrderController::class,'switchStatusProcessing'])->name('processing');
+        Route::post('/{order}/shipped',[OrderController::class,'switchStatusShipped'])->name('shipped');
+    });
+
     Route::group(['prefix' => 'categories', 'as' => 'category.'],function(){
         Route::get('/',[CategorieController::class,'index'])->name('index');
         Route::post('/store',[CategorieController::class,'store'])->name('store');
