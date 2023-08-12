@@ -156,4 +156,14 @@
         $(`#productEditeModal${product.id}`).modal('show');
     }
 
+    const dateInput = document.getElementById('order-filter-date');
+    dateInput.addEventListener('change',function(e){
+        const customInput = document.getElementById('custom-date-input');
+        if(e.target.value == 'custom'){
+            customInput.classList.remove("d-none");
+        }else{
+            customInput.classList.add("d-none");
+       }
+    })
+
 </script>

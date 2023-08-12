@@ -7,6 +7,32 @@
             <h1 class="text-2xl" style="font-weight:bold;">Orders</h1>
         </div>
         <div class="bg-white">
+            <div class="p-2">
+                <form method="GET" action="{{ route('orders.index') }}">
+                    <span>Order Date</span>
+                    <select name="filter_date" id="order-filter-date">
+                        <option value="all-dates" {{ $filterDate === 'all-dates' ? 'selected' : '' }}>All dates</option>
+                        <option value="today" {{ $filterDate === 'today' ? 'selected' : '' }}>Today</option>
+                        <option value="month" {{ $filterDate === 'month' ? 'selected' : '' }}>This Month</option>
+                        <option value="year" {{ $filterDate === 'year' ? 'selected' : '' }}>This year</option>
+                        <option value="custom" {{ $filterDate === 'custom' ? 'selected' : '' }}>Custom</option>
+                    </select>
+                    <div class=" w-100 d-inline d-none" id="custom-date-input">
+                        <span class=" mr-2">From :</span><input type="date" name="start_date">
+                        <span class=" mr-2">To :</span><input type="date" name="end_date"> 
+                    </div>
+                    <div class=" d-inline">
+                        <span>Status</span>
+                        <select name="orderStatus" id="orderStatusFilter">
+                            <option value="allStatus" {{ $filterStatus === 'allStatus' ? 'selected' : '' }}>All</option>
+                            <option value="on hold" {{ $filterStatus === 'on hold' ? 'selected' : '' }}>On Hold</option>
+                            <option value="processing" {{ $filterStatus === 'processing' ? 'selected' : '' }}>Processing</option>
+                            <option value="shipped" {{ $filterStatus === 'shipped' ? 'selected' : '' }}>Shipped</option>
+                        </select>
+                    </div>               
+                    <button type="submit" class="btn btn-dark rounded-0">Filter</button>
+                </form>
+            </div>
             <table id="myTable" class="table table-bordered text-center" style="vertical-align: middle;">
                 <thead>
                     <tr>
