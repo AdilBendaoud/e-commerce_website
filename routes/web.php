@@ -4,20 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-use Illuminate\Routing\Route as RoutingRoute;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () { return view('user.home');})->name('/');
 
@@ -48,6 +37,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::put('/{category}/update',[CategorieController::class,'update'])->name('update');
         Route::delete('/{category}/delete',[CategorieController::class,'destroy'])->name('destroy');
     });
+
+    Route::resource('coupons', CouponController::class);
 });
 
 Route::resource('products', ProductController::class);

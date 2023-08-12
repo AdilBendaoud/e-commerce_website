@@ -30,6 +30,10 @@
             <x-sidebar-link :active="request()->routeIs('orders.index')" :link="'orders.index'" :icon="'fa-solid fa-bag-shopping'">
                 {{__( 'Orders' )}}
             </x-sidebar-link>
+            
+            <x-sidebar-link :active="request()->routeIs('coupons.index')" :link="'coupons.index'" :icon="'fa-solid fa-ticket'">
+                {{__( 'Coupons' )}}
+            </x-sidebar-link>
         </div>
         <div class="mx-auto rounded-2" style="width:90%;background-color:#c0392b;">
             <form method="POST" action="{{ route('logout') }}" x-data>

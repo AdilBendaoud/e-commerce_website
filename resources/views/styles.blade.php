@@ -106,6 +106,15 @@
         border-color: gray;
     }
 
-    
+    #generate_coupon_btn{
+        padding: 5px 7px;
+        background-color: white;
+        color: #0064ff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    #generate_coupon_btn:hover{
+        background-color: #e0e0e0;
+    }
 
 </style>
