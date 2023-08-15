@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,5 +14,10 @@ class HomeController extends Controller
         }else{
             return redirect()->route('/');
         }
+    }
+
+    public function userHome(){
+        $products = Product::all();
+        return view('user.home',compact('products'));
     }
 }

@@ -10,10 +10,11 @@
 <body>
     @include('navigation-menu')
     
-    <main>
+    <main style="background-color: var(--background);">
         @yield('content')
     </main>
 
     @include('scripts')
+    @yield('script')
 </body>
 </html>

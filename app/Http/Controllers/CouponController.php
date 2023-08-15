@@ -7,23 +7,13 @@ use Illuminate\Http\Request;
 
 class CouponController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $coupons = Coupon::all();
         return view('admin.coupons',compact('coupons'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $coupon = new Coupon();
@@ -41,13 +31,6 @@ class CouponController extends Controller
         return response()->json(['coupon'=>$coupon]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Coupon  $coupon
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Coupon $coupon)
     {
         $coupon->code = $request->code;
@@ -59,15 +42,31 @@ class CouponController extends Controller
         return redirect()->back()->with('success','Coupon updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Coupon  $coupon
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Coupon $coupon)
     {
         $coupon->delete();
         return redirect()->back()->with('success','Coupon deleted successfully');
+    }
+
+    public function applyCoupon(Request $request){
+        $coupon = Coupon::where('code',$request->coupon_code)->first();
+        if($coupon == null){
+            return redirect()->back()->with('error',"Coupon deosn't existe");
+        }
+
+        if ($coupon->expiry_date && now() > $coupon->expiry_date) {
+            return redirect()->back()->with('error', 'Coupon has expired.');
+        }
+            
+        if ($coupon->usage_limite == '0') {
+            return redirect()->back()->with('error', 'Coupon has reached its usage limit.');
+        }
+        
+        $newLimite = (int)$coupon->usage_limite-1;
+        $coupon->usage_limite = (string)$newLimite;
+        $coupon->save();
+        session()->put('coupon', $coupon);
+        return redirect()->back()->with('success','Coupon applied successfully');
+        
     }
 }

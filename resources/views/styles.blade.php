@@ -116,5 +116,34 @@
     #generate_coupon_btn:hover{
         background-color: #e0e0e0;
     }
+    .fa-circle-xmark:hover{
+        color:red !important;
+    }
+    .gray-strikethrough {
+        color: gray;
+        align-self: center;
+        text-decoration: line-through;
+        font-size: 16px;
+    }
+    .primary-color {
+        color: var(--primary);
+    }
+
+    @media (min-width: 769px) {
+        #desktop-table {
+            display: table;
+        }
+        #mobile-table {
+            display: none;
+        }
+    }
+    @media (max-width: 768px) {
+        #desktop-table {
+            display: none;
+        }
+        #mobile-table {
+            display: table;
+        }
+    }
 
 </style>
