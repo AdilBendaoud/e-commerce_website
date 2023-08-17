@@ -1,0 +1,29 @@
+  .navbar-brand {
+    display: flex; /* To align spans horizontally */
+  }
+  
+  .first-text {
+    color: #f19427;
+    margin-right: 5px;
+  }
+  
+  .second-text {
+    color: #28739f;
+  }
+
+  .text{
+    color: #499cc0;
+  }
+  .Linkss{
+    color: #78a0b8;
+  }
+  .fas-fa-chevron-left{
+    color: #28739f;
+  }
+  #Goshop{
+    color: #FFFFFF;
+    background-color: #f19427;
+  }
+  .imageCard{
+    width: 40%;
+  }
