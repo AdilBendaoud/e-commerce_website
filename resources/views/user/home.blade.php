@@ -206,8 +206,6 @@
         </div>
     </section>
     <!-- End Featured Product -->
-<<<<<<< Updated upstream
-=======
 
     <!-- Start Footer -->
     <footer class="bg-dark" id="tempaltemo_footer">
@@ -313,7 +311,6 @@
     <script src="assets/js/home.js"></script>
     <!-- End Script -->
 
->>>>>>> Stashed changes
 @endsection
 
 @section('script')
