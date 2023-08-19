@@ -129,79 +129,11 @@
                     </p>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100" style="width: 350px; height: 150px;">
-                        
-                        <a href="shop-single.html">
-                            <img src="images/anis-1.webp" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$240.00</li>
-                            </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Anise Essential Oil</a>
-                            <p class="card-text">
-                                Anise Essential Oil: A Must-Have for Retailers and Aromatherapy Practitioners.
-                            </p>
-                            <p class="text-muted">Reviews (24)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100" style="width: 350px; height: 150px;">
-                        <a href="shop-single.html">
-                            <img src="images/5l_arganil2-1-1.webp" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$480.00</li>
-                            </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Fragrant Argan Oil</a>
-                            <p class="card-text">
-                                Fragrant Argan Oil: Experience the Aroma of Moroccan Elegance.
-                            </p>
-                            <p class="text-muted">Reviews (48)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100" style="width: 350px; height: 150px;">
-                        <a href="shop-single.html">
-                            <img src="images/blacksouap-1-1.webp" class="card-img-top imageCard" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$360.00</li>
-                            </ul>
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Organic Moroccan Black Soap Wholesale</a>
-                            <p class="card-text">Wholesale Organic Moroccan Black Soap: Elevate Your Offering with Luxurious Skin Care.   
-                            </p>
-                            <p class="text-muted">Reviews (74)</p>
-                        </div>
-                    </div>
-                </div>
+             
+            <div class="row gap-3 justify-content-center" >
+                @foreach($products as $product)
+                    <x-product :product="$product" />
+                @endforeach
             </div>
         </div>
     </section>

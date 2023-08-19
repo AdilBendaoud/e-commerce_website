@@ -17,7 +17,9 @@ class HomeController extends Controller
     }
 
     public function userHome(){
-        $products = Product::all();
+        $products = Product::with(['images' => function ($query) {
+            $query->where('cover', true);
+        }])->take(4)->get();
         return view('user.home',compact('products'));
     }
 }
