@@ -10,6 +10,7 @@
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 <!-- app script -->
 <script src="{{ asset('js/app.js') }}"></script>
+
 <script>
     let table = new DataTable('#myTable');
 </script>

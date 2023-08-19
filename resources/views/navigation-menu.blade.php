@@ -12,9 +12,29 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="#" :active="true">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{route('/')}}" :active="request()->routeIs('/')">
+                        {{ __('Home') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{route('/about')}}" :active="request()->routeIs('/about')">
+                        {{ __('About') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{route('/shop')}}" :active="request()->routeIs('/shop')">
+                        {{ __('Shop') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{route('/contact')}}" :active="request()->routeIs('/contact')">
+                        {{ __('Contact') }}
+                    </x-jet-nav-link>
+                    @auth
+                        <x-jet-nav-link href="{{route('cart.index')}}" :active="request()->routeIs('cart.index')">
+                            <div class="position-relative">
+                                <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                            </div>
+                        </x-jet-nav-link>
+                    @endauth
                 </div>
             </div>
             @auth
@@ -72,8 +92,13 @@
                 </div>
             @else
                 <div class="flex align-items-center">
-                    <a href="{{ route('login') }}" class=" btn btn-primary">Log in</a>
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                    <x-jet-button>
+                        <a class="text-decoration-none fw-bold text-white" style="font-size: 14px !important;" href="{{ route('login') }}">Log in</a>
+                    </x-jet-button>
+                    
+                    <x-jet-secondary-button class="ml-2">
+                        <a class="text-decoration-none fw-bold" href="{{ route('register') }}" style="font-size: 14px !important;">Register</a>
+                    </x-jet-secondary-button>
                 </div>
             @endauth
             <!-- Hamburger -->
@@ -91,9 +116,29 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="#" :active="true">
-                {{ __('Dashboard') }}
+            <x-jet-responsive-nav-link href="{{route('/')}}" :active="request()->routeIs('/')">
+                {{ __('Home') }}
             </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{route('/about')}}" :active="request()->routeIs('/about')">
+                {{ __('About') }}
+            </x-jet-responsive-nav-link>
+            
+            <x-jet-responsive-nav-link href="{{route('/shop')}}" :active="request()->routeIs('/shop')">
+                {{ __('Shop') }}
+            </x-jet-responsive-nav-link>
+            
+            <x-jet-responsive-nav-link href="{{route('/contact')}}" :active="request()->routeIs('/contact')">
+                {{ __('Contact') }}
+            </x-jet-responsive-nav-link>
+            @auth
+                <x-jet-responsive-nav-link href="{{route('cart.index')}}" :active="request()->routeIs('cart.index')">
+                    <div class="position-relative">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                    </div>
+                </x-jet-responsive-nav-link>
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->

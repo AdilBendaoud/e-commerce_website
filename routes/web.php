@@ -10,6 +10,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class,'userHome'])->name('/');
+Route::get('/about', function(){return view('user.about');})->name('/about');
+Route::get('/shop', function(){return view('user.shop');})->name('/shop');
+Route::get('/contact', function(){return view('user.contact');})->name('/contact');
 
 Route::get('/redirect',[HomeController::class,'redirect'])->name('redirect');
 
