@@ -138,6 +138,7 @@
         </div>
     </section>
     <!-- End Featured Product -->
+
 @endsection
 
 @section('script')
