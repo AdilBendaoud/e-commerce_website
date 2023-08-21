@@ -97,17 +97,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-4 p-5 mt-3">
+            <div class="col-12 col-md-4 p-5 mt-3 category-item">
                 <a href="#"><img src="images/phpfWbfVO.jpg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Huiles Essentielles</h5>
                 <p class="text-center"><a class="btn" id="Goshop">Go Shop</a></p>
             </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
+            <div class="col-12 col-md-4 p-5 mt-3 category-item">
                 <a href="#"><img src="images/bestcat-1.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Huiles Essentielles</h2>
                 <p class="text-center"><a class="btn" id="Goshop">Go Shop</a></p>
             </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
+            <div class="col-12 col-md-4 p-5 mt-3 category-item">
                 <a href="#"><img src="images/bestcat-2.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Huiles Essentielles</h2>
                 <p class="text-center"><a class="btn" id="Goshop">Go Shop</a></p>
@@ -138,11 +138,78 @@
         </div>
     </section>
     <!-- End Featured Product -->
+    
+    <!-- Start FAQ section -->
+    <section>
+        <div class="container faq-section py-5">
+            <h1 class="h1 text-center" style="margin: 2rem 0rem;">Frequently Asked Questions</h1>
+            <div class="faq">
+                <div class="question">
+                    <h3>How can I get some samples?</h3>
+                    <i class="fa-solid fa-plus" style="color:var(--primary);font-size:20px"></i>
+                </div>
+                <div class="answer">
+                    <p>
+                        We are honoured to offer you samples. New clients are expected to pay for the courier cost, 
+                        the samples are free for you, 
+                        and this charge will be deducted from the payment for formal order.
+
+                        Regarding the courier cost: You can arrange a RPI (remote pick-up) 
+                        service upon FedEx, UPS, DHL, TNT, etc. To have the samples collected; or inform us your DHL collection account.
+                        Then you can pay the freight direct to your local carrier company.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq">
+                <div class="question">
+                    <h3>How does your Certified Virgin Argan Oil Company do regarding quality control?</h3>
+                    <i class="fa-solid fa-plus" style="color:var(--primary);font-size:20px"></i>
+                </div>
+                <div class="answer">
+                    <p>
+                        Quality is priority! Every worker keeps the QC from the very beginning to the very end:
+                        <br>
+                        <span class="pl-3">
+                            <span class="font-weight-bold">1- </span>All raw material we used are environmental-friendly.
+                        </span>
+                        <br>
+                        <span class="pl-3">
+                            <span class=" font-bold">2- </span>Skilful workers care every detail in handing the stamping, printing, stitching, packing process.
+                        </span>
+                        <br>
+                        <span class="pl-3">
+                            <span class="font-weight-bold">3- </span>Quality control department especially responsible for quality checking in each process.
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="question">
+                    <h3>Can your factory print or emboss my logo on the goods?</h3>
+                    <i class="fa-solid fa-plus" style="color:var(--primary);font-size:20px"></i>
+                </div>
+                <div class="answer">
+                    <p>
+                        Yes, we can print your logo on the goods or their packing box, for patent protection purpose, 
+                        a letter of attorney (letter of authorization) shall be provided for the logo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End FAQ section -->
 
 @endsection
 
 @section('script')
-<script src="assets/js/templatemo.js"></script>
-<script src="assets/js/custom.js"></script>
-<script src="assets/js/home.js"></script>
+<script>
+    const faqs = document.getElementsByClassName('faq');
+    for (let index = 0; index < faqs.length; index++) {
+        faqs[index].addEventListener("click",()=>{
+            faqs[index].classList.toggle("active");
+        });
+    }
+</script>
 @endsection

@@ -1,4 +1,4 @@
-<div class="col-12 col-md-4" style="width: 270px;height:430px;background-color:white;">
+<div class="shadow rounded col-12 col-md-4" style="width: 270px;height:435px;background-color:white;">
     <div style="height: 270px;">
         <img src="{{$product->images[0]->image_path}}" style="height: 100%;width: 100%;" class="block" alt="mok">
     </div>
@@ -16,7 +16,7 @@
             <i class="text-muted fa fa-star"></i>
             <i class="text-muted fa fa-star"></i>
         </div>
-        <div class="pr-2" style="float: right;">
+        <div style="float: right;">
             <form action="{{route('cart.add',$product->id)}}" method="post">
                 @csrf
                 <x-jet-button class="btn btn-secondary" title="Add to cart">
