@@ -65,6 +65,46 @@
     </section>
     <!-- End Section -->
 
+    <!-- Start certification section -->
+    <section class="bg-white pb-5">
+        <div class="container py-5">
+            <div class="row text-center py-5">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Our certifications</h1>
+                    <p>
+                        To offer you our organic products, Oriental Group collaborates with four certifying bodies:
+                    </p>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-3">
+                <div class="col flex align-items-center justify-content-center p-0">
+                    <a href="https://www.ccpb.it/en/">
+                        <img src="images/ccpb.jpg" alt="CCPB" class="rounded-circle img-fluid border border-secondary" style="width: 175px;">
+                    </a>
+                </div>
+
+                <div class="col flex align-items-center justify-content-center p-0">
+                    <a href="https://www.usda.gov/topics/organic">
+                        <img src="images/usda.jpg" alt="USDA" class="rounded-circle img-fluid border border-secondary" style="width: 180px;">
+                    </a>
+                </div>
+
+                <div class="col flex align-items-center justify-content-center p-0">
+                    <a href="https://www.fda.gov/">
+                        <img src="images/fda.png" alt="FDA" class="rounded-circle img-fluid border border-secondary" style="width: 180px;">
+                    </a>
+                </div>
+
+                <div class="col flex align-items-center justify-content-center p-0">
+                    <a href="https://www.ecocert.com/en/certification-detail/natural-and-organic-cosmetics-cosmos">
+                        <img src="images/ecocert.jpg" alt="ECOCERT" class="rounded-circle img-fluid border border-secondary" style="width: 180px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End cetification section -->
+
     <!-- Start Brands -->
     <section class="bg-light py-5">
         <div class="container my-4">

@@ -31,7 +31,11 @@
                         <x-jet-nav-link href="{{route('cart.index')}}" :active="request()->routeIs('cart.index')">
                             <div class="position-relative">
                                 <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                                <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                                @if(session()->has('cart'))
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{ count(session('cart'))}}</span>
+                                @else
+                                    <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                                @endif
                             </div>
                         </x-jet-nav-link>
                     @endauth
@@ -135,7 +139,11 @@
                 <x-jet-responsive-nav-link href="{{route('cart.index')}}" :active="request()->routeIs('cart.index')">
                     <div class="position-relative">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                        @if(session()->has('cart'))
+                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{ count(session('cart'))}}</span>
+                        @else
+                            <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                        @endif
                     </div>
                 </x-jet-responsive-nav-link>
             @endauth

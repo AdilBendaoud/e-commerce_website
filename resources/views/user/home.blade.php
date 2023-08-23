@@ -169,18 +169,21 @@
                 <div class="answer">
                     <p>
                         Quality is priority! Every worker keeps the QC from the very beginning to the very end:
-                        <br>
-                        <span class="pl-3">
-                            <span class="font-weight-bold">1- </span>All raw material we used are environmental-friendly.
-                        </span>
-                        <br>
-                        <span class="pl-3">
-                            <span class=" font-bold">2- </span>Skilful workers care every detail in handing the stamping, printing, stitching, packing process.
-                        </span>
-                        <br>
-                        <span class="pl-3">
-                            <span class="font-weight-bold">3- </span>Quality control department especially responsible for quality checking in each process.
-                        </span>
+                        <ol class="pt-0">
+                            <li>
+                                <span class="font-weight-bold">1- </span>All raw material we used are environmental-friendly.
+                            </li>
+                            <li>
+                                <span class=" font-bold">2- </span>Skilful workers care every detail in handing the stamping, printing, stitching, packing process.
+                            </li>
+                            <li>
+                                <span class="font-weight-bold">3- </span>Quality control department especially responsible for quality checking in each process.
+                            </li>
+                            <li>
+                                <span class="font-weight-bold">4- </span>Our company is certified by reputable regulatory bodies and organizations.
+                                These certifications validate our commitment to quality and authenticity, giving our customers confidence in the products they receive.
+                            </li>
+                        </ol>
                     </p>
                 </div>
             </div>

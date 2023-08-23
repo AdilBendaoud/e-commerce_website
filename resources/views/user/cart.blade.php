@@ -3,7 +3,7 @@
 @section('content')
     <div class="mx-auto" style="font-size: 17px;width:80%;">
         <h2 class="pt-5 fw-bold" style="font-size: 30px;">Cart</h2>
-        <table id="desktop-table" class="table border-2" style="border-color:#dddddb;">
+        <table id="desktop-table" class="table border-2 mb-4" style="border-color:#dddddb;">
             <tr class=" bg-white">
                 <th></th>
                 <th>Product</th>
@@ -65,7 +65,7 @@
             </tr>
         </table>
 
-        <table id="mobile-table" class="table border-2" style="border-color:#dddddb;">
+        <table id="mobile-table" class="table border-2 mb-4" style="border-color:#dddddb;">
             @foreach($cart as $item)
                 <tr>
                     <td>
@@ -135,6 +135,16 @@
                 </td>
             </tr>
         </table>
+        <div>
+            <a class="text-decoration-none" href="{{ route('stripe.index') }}">
+                <button class="block w-50 justify-content-center d-flex mx-auto text-uppercase text-white  px-4 py-2 rounded-md font-semibold" 
+                        style="background-color: var(--primary);font-size:1rem;" 
+                        onmouseout="this.style.backgroundColor='#ff8f01'" 
+                        onmouseover="this.style.backgroundColor='#d1790a'">Proceed to Pay</button>
+            </a>
+        </div>
+        <br>
+        <br>
     </div>
 @endsection
 
