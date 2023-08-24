@@ -18,8 +18,8 @@ class CreateOrdersTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('shipping_addresses_id')->constrained();
             $table->date('order_date');
-            $table->date('shipping_date');
-            $table->string('status');
+            $table->date('shipping_date')->nullable()->default(null);
+            $table->string('status')->default('on hold');
             $table->decimal('total',7,3);
             $table->timestamps();
         });

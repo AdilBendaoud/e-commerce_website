@@ -28,7 +28,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::post('/updateQuantity/{id}',[CartController::class,'changeQuantity'])->name('update');
     });
 
-    Route::get('/checkout',[stripeController::class,'index'])->name('stripe.index');
+    Route::controller(stripeController::class)->group(function(){
+        Route::get('stripe', 'index')->name('stripe.index');
+        Route::post('stripe', 'stripePost')->name('stripe.post');
+        Route::get('/{country}/cities','getCities');
+    });
 });
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','admin'])->group(function () {

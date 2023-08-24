@@ -154,5 +154,10 @@
             display: table;
         }
     }
+    #payment-form label::after{
+        content: "*";
+        color: red;
+        font-weight: bold;
+    }
 
 </style>
