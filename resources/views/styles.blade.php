@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 <link rel="stylesheet" href="{{asset('css/templatemo.css')}}">
 <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+<link rel="stylesheet" href="{{ asset('css/xzoom.min.css') }}">
 
 <style>
     #myTable_length select{
@@ -158,6 +159,14 @@
         content: "*";
         color: red;
         font-weight: bold;
+    }
+    .product-details-image{
+        transition: all 1s ease-in-out;
+    }
+    @media (min-width:1200px) {
+        .product-details-image{
+            max-height: 500px;
+        }
     }
 
 </style>

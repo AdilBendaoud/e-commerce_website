@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -12,7 +13,9 @@ use App\Http\Controllers\stripeController;
 
 Route::get('/', [HomeController::class,'userHome'])->name('/');
 Route::get('/about', function(){return view('user.about');})->name('/about');
-Route::get('/shop', function(){return view('user.shop');})->name('/shop');
+Route::resource('products', ProductController::class);
+Route::get('/shop', [ProductController::class,'index'])->name('/shop');
+Route::get('products/{product:slug}', [ProductController::class,'show'])->name('products.show');
 Route::get('/contact', function(){return view('user.contact');})->name('/contact');
 
 Route::get('/redirect',[HomeController::class,'redirect'])->name('redirect');
@@ -20,6 +23,8 @@ Route::get('/redirect',[HomeController::class,'redirect'])->name('redirect');
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
     Route::post('/apply-coupon',[CouponController::class,'applyCoupon'])->name('coupon.apply');
+
+    Route::post('/{product}/comment',[CommentController::class,'store'] )->name('comment.store');
 
     Route::group(['prefix'=>'cart','as'=>'cart.'], function(){
         Route::get('/',[CartController::class,'index'])->name('index');
@@ -62,5 +67,3 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
         Route::post('/{order}/shipped',[OrderController::class,'switchStatusShipped'])->name('shipped');
     });
 });
-
-Route::resource('products', ProductController::class);

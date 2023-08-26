@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Order;
+use App\Models\Comment;
 use App\Models\Categorie;
 use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Model;
@@ -41,5 +42,10 @@ class Product extends Model
     public function orders()
     {
         return $this->belongsToMany(Order::class)->withPivot('quantity');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

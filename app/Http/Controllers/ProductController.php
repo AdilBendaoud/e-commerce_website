@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+        return view('user.shop');
     }
 
     public function indexAdmin()
@@ -94,7 +94,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('user.product-details',compact('product'));
     }
 
 
