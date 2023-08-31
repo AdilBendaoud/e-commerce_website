@@ -10,6 +10,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\stripeController;
+use App\Http\Controllers\TaskController;
 
 Route::get('/', [HomeController::class,'userHome'])->name('/');
 Route::get('/about', function(){return view('user.about');})->name('/about');
@@ -49,6 +50,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
         Route::post('/addAdmin',[AdminController::class,'addAdmin'])->name('add');
         Route::delete('/deleteAdmin/{id}',[AdminController::class,'destroy'])->name('destroy');
         Route::get('/admin_products',[ProductController::class,'indexAdmin'])->name('products');
+    });
+
+    Route::group(['prefix' => 'todos', 'as' => 'todos.'],function(){
+        Route::post('/store', [TaskController::class, 'store'])->name('store');
+        Route::patch('/{task}/toggleCompleted',[TaskController::class,'toggleCompleted'])->name('toggle');
+        Route::get('/id',[TaskController::class,'highestId'])->name('id');
+        Route::delete('/{task}', [TaskController::class, 'destroy'])->name('destory');
     });
 
     Route::delete('/deleteImage',[ProductController::class,'destroyImage'])->name('delete.image');
