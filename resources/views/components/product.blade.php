@@ -19,8 +19,14 @@
                 foreach($product->comments as $comment){
                     $allRating+=(int)$comment->rating;
                 }
+                if(count($product->comments) != 0){
                 $stars = $allRating/count($product->comments);
-                $noStar = 5-$stars;
+                $noStar = 5-$stars;                    
+                }
+                else {
+                    $stars = 0;
+                    $noStar = 0;
+                }
             @endphp
 
             @for ($i = 0; $i < $stars ; $i++)
