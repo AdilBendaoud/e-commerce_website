@@ -7,15 +7,24 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @include('styles')
 </head>
-<body class=" min-h-screen flex">
+<body class="min-h-screen row m-0">
     
     <x-sidebar />
-
-    <main class="w-100" style="background-color: var(--background);">
+    <main class="col-12 col-lg-10" style="background-color: var(--background);">
+        <button id="mytoggleButton" class=" btn btn-primary"><i class="fa-solid fa-bars text-white"></i></button>
         @yield('content')        
     </main>
     
     @include('scripts')
     @yield('script')
+    <script>
+        const toggleButton = document.getElementById('mytoggleButton');
+        const sidebar = document.getElementById('sidebar');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+            toggleButton.classList.toggle('translate');
+        });
+    </script>
 </body>
 </html>
