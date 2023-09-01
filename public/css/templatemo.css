@@ -57,6 +57,7 @@ body, ul, li, p, a, label, input, div {
 .bg-dark { background-color: #212934 !important;}
 .bg-light { background-color: #e9eef5 !important;}
 .bg-black { background-color: #1d242d !important;}
+.bgg-success { background-color: #28739f !important;}
 .btn-success {
   background-color: #499cc0!important;
   border-color: #499cc0 !important;

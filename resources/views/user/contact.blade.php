@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
-<section class="bg-success py-5">
+<section class="bgg-success py-5">
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
@@ -19,47 +19,47 @@
         </div>
     </section>
     <!-- Contact form -->
-<div class="contact-us">
-  <div class="containerr">
-    <div class="contentt">
-      <div class="left-sidee">
-        <div class="address details">
+  <div class="my-body">
+  <div class="my-container">
+    <div class="my-content">
+      <div class="my-left-side">
+        <div class="my-address my-details">
           <i class="fas fa-map-marker-alt"></i>
-          <div class="topic">Address</div>
-          <div class="text-onee">Surkhet, NP12</div>
-          <div class="text-twoo">Birendranagar 06</div>
+          <div class="my-topic">Address</div>
+          <div class="my-text-one">Surkhet, NP12</div>
+          <div class="my-text-two">Birendranagar 06</div>
         </div>
-        <div class="phone detailss">
+        <div class="my-phone my-details">
           <i class="fas fa-phone-alt"></i>
-          <div class="topicc">Phone</div>
-          <div class="text-onee">+0098 9893 5647</div>
-          <div class="text-twoo">+0096 3434 5678</div>
+          <div class="my-topic">Phone</div>
+          <div class="my-text-one">+0098 9893 5647</div>
+          <div class="my-text-two">+0096 3434 5678</div>
         </div>
-        <div class="email details">
+        <div class="my-email my-details">
           <i class="fas fa-envelope"></i>
-          <div class="topic">Email</div>
-          <div class="text-onee">codinglab@gmail.com</div>
-          <div class="text-twoo">info.codinglab@gmail.com</div>
+          <div class="my-topic">Email</div>
+          <div class="my-text-one">codinglab@gmail.com</div>
+          <div class="my-text-two">info.codinglab@gmail.com</div>
         </div>
       </div>
-      <div class="right-sidee">
-        <div class="topic-textt">Send us a message</div>
-        <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="#">
-        <div class="input-boxx">
-          <input type="textt" placeholder="Enter your name">
-        </div>
-        <div class="input-boxx">
-          <input type="textt" placeholder="Enter your email">
-        </div>
-        <div class="input-box message-box">
-          
-        </div>
-        <div class="buttonn">
-          <input type="buttonn" value="Send Now" >
-        </div>
-      </form>
-    </div>
+      <div class="my-right-side">
+        <div class="my-topic-text">Send us a message</div>
+        <p>If you have any work for me or any types of queries related to my tutorial, you can send me a message from here. It's my pleasure to help you.</p>
+        <form action="#">
+          <div class="my-input-box">
+            <input type="text" placeholder="Enter your name">
+          </div>
+          <div class="my-input-box">
+            <input type="text" placeholder="Enter your email">
+          </div>
+          <div class="my-input-box my-message-box">
+            <textarea placeholder="Your message"></textarea>
+          </div>
+          <div class="my-button">
+            <input type="button" value="Send Now">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   </div>
