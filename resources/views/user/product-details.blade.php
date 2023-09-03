@@ -30,7 +30,7 @@
                             }
                             else {
                             $stars = 0;
-                            $noStar = 0;
+                            $noStar = 5;
                         }
 
                     @endphp

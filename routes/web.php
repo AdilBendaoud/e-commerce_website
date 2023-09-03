@@ -15,7 +15,7 @@ use App\Http\Controllers\TaskController;
 Route::get('/', [HomeController::class,'userHome'])->name('/');
 Route::get('/about', function(){return view('user.about');})->name('/about');
 Route::resource('products', ProductController::class);
-Route::get('/shop', [ProductController::class,'index'])->name('/shop');
+Route::get('/shop/{category?}', [ProductController::class,'index'])->name('/shop');
 Route::get('products/{product:slug}', [ProductController::class,'show'])->name('products.show');
 Route::get('/contact', function(){return view('user.contact');})->name('/contact');
 

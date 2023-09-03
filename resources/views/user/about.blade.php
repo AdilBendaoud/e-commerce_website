@@ -8,9 +8,10 @@
                 <div class="col-md-8 text-white">
                     <h1>About Us</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Welcome to Oriental Group,we're passionate about pure, organic argan oil. 
+                        Our journey is one of dedication to quality and sustainability. 
+                        With roots in Moroccan traditions, we craft beauty products that reflect authenticity. 
+                        Discover our commitment to enhancing your beauty while caring for the environment. Join us on this radiant journey.
                     </p>
                 </div>
                 <div class="col-md-4">

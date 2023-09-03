@@ -14,9 +14,6 @@
 <link rel="stylesheet" href="{{asset('css/templatemo.css')}}">
 <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 <link rel="stylesheet" href="{{ asset('css/xzoom.min.css') }}">
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 <style>
@@ -219,6 +216,17 @@
         transform: translateY(-50%);
         font-size: 18px;
         color: red;
+    }
+    #template-mo-zay-hero-carousel .carousel-control-prev,
+    #template-mo-zay-hero-carousel .carousel-control-next{
+        display: none !important;
+    }
+    #template-mo-zay-hero-carousel:hover .carousel-control-prev,
+    #template-mo-zay-hero-carousel:hover .carousel-control-next{
+        display: flex !important;
+    }
+    .pagination{
+        float: right;
     }
     @media (max-width: 991px) {
         #sidebar{

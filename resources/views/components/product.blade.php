@@ -1,10 +1,17 @@
-<div class="shadow rounded col-12 col-md-4" style="width: 270px;height:435px;background-color:white;">
-    <div style="height: 270px;">
+<div class="card mb-4 product-wap rounded-0">
+    <div class="card rounded-0">
+        @php
+            foreach($product->images as $image){
+                if($image->cover){
+                    $image_to_display = $image;
+                }
+            }    
+        @endphp
         <a href="{{ route('products.show',$product->slug) }}">
-            <img src="{{$product->images[0]->image_path}}" style="height: 100%;width: 100%;" class="block" alt="mok">
+            <img class="card-img rounded-0 img-fluid" src="{{asset($image_to_display->image_path)}}">
         </a>
     </div>
-    <div class="p-2">
+    <div class="card-body">
         <span style="font-size:15px;color:rgb(98, 97, 92);">{{ $product->categorie->name }}</span>
         <a href="{{ route('products.show',$product->slug) }}" class="text-decoration-none">
             <h5 style="margin: 0;" class="text-dark">{{$product->name}}</h5>
@@ -25,7 +32,7 @@
                 }
                 else {
                     $stars = 0;
-                    $noStar = 0;
+                    $noStar = 5;
                 }
             @endphp
 
@@ -40,7 +47,7 @@
         <div style="float: right;">
             <form action="{{route('cart.add',$product->id)}}" method="post">
                 @csrf
-                <x-jet-button class="btn btn-secondary" title="Add to cart">
+                <x-jet-button class="btn" title="Add to cart">
                     <i class="fa-solid fa-cart-plus"></i>
                 </x-jet-button>
             </form>

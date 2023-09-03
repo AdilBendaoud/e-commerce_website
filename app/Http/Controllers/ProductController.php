@@ -23,9 +23,25 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Categorie $category = null)
     {
-        return view('user.shop');
+        $categories = Categorie::all();
+        $query = $request->input('query');
+        $productsQuery = Product::query();
+
+        if ($query) {
+            $productsQuery->where('name', 'like', '%' . $query . '%');
+        }
+
+        if ($category) {
+            $productsQuery->whereHas('categorie', function ($query) use ($category) {
+                $query->where('id', $category->id);
+            });
+        }
+
+        $products = $productsQuery->paginate(1);
+
+        return view('user.shop', compact('categories', 'products', 'category', 'query'));
     }
 
     public function indexAdmin()

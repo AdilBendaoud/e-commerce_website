@@ -17,15 +17,8 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 text"><b>Oriental</b>Group
-                                    </h1>
-                                <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
-                                <p>
-                                    Oriental Group offers a 100% branding service for the customers planning to penetrate their local markets using their own custom label… <a rel="sponsored" class="Linkss" href="https://templatemo.com" target="_blank">TemplateMo</a> website. 
-                                    Image credits go to <a rel="sponsored" class="Linkss" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
-                                    <a rel="sponsored" class="Linkss" href="https://unsplash.com/" target="_blank">Unsplash</a> and
-                                    <a rel="sponsored" class="Linkss" href="https://icons8.com/" target="_blank">Icons 8</a>.
-                                </p>
+                                <h1 class="h1 mb-3">Discover the Beauty of Pure <span style="color: var(--primary);">Argan Oil.</span></h1>
+                                <h3 class="h2">Experience Nourished Skin and Silky Hair with Our Premium Argan Oil.</h3>
                             </div>
                         </div>
                     </div>
@@ -35,16 +28,12 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="images/backgr3.png" alt="">
+                            <img class="img-fluid" src="images/backgr3.png">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Proident occaecat</h1>
-                                <h3 class="h2">Aliquip ex ea commodo consequat</h3>
-                                <p>
-                                    You are permitted to use this Zay CSS template for your commercial websites. 
-                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
-                                </p>
+                                <h1 class="h1">Unlock <span style="color: var(--primary);">Radiant Beauty</span> with Our Argan Oil Elixir</h1>
+                                <h3 class="h2">Experience the Luxurious Transformation of Skin and Hair</h3>
                             </div>
                         </div>
                     </div>
@@ -58,26 +47,19 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Repr in voluptate</h1>
-                                <h3 class="h2">Ullamco laboris nisi ut </h3>
-                                <p>
-                                    We bring you 100% free CSS templates for your websites. 
-                                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
-                                </p>
+                                <h1 class="h1">Discover Nature's Secret to <span style="color: var(--primary);">Ageless Beauty</span></h1>
+                                <h3 class="h2">Harness the Power of 100% Pure Moroccan ghassoul</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="template-mo-zay-hero-carousel" class="carousel">
-            <!-- Carousel slides go here -->
-        </div>
     
-        <a class="carousel-control-prev text-decoration-none w-auto ps-3 hidden" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
             <i class="fas fa-chevron-left"></i>
         </a>
-        <a class="carousel-control-next text-decoration-none w-auto pe-3 hidden" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
             <i class="fas fa-chevron-right"></i>
         </a>
     </div>
@@ -91,8 +73,7 @@
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Categories of The Month</h1>
                 <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    Discover this month's featured categories for an enhanced shopping experience.
                 </p>
             </div>
         </div>
@@ -124,16 +105,17 @@
                 <div class="col-lg-6 m-auto">
                     <h1 class="h1">Featured Product</h1>
                     <p>
-                        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident.
+                        Discover our top-rated product of the month for a premium beauty experience.
                     </p>
                 </div>
             </div>
              
-            <div class="row gap-3 justify-content-center" >
+            <div class="row justify-content-center" >
                 @foreach($products as $product)
+                <div class="col-6 col-md-3">
                     <x-product :product="$product" />
-                @endforeach
+                </div>
+                @endforeach                
             </div>
         </div>
     </section>

@@ -7,13 +7,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @include('styles')
 </head>
-<body class="min-h-screen row m-0">
-    
-    <x-sidebar />
-    <main class="col-12 col-lg-10" style="background-color: var(--background);">
-        <button id="mytoggleButton" class=" btn btn-primary"><i class="fa-solid fa-bars text-white"></i></button>
-        @yield('content')        
-    </main>
+<body class="min-h-screen relative">
+    <div class="row m-0">
+        <x-sidebar />
+        <main class="col-12 col-lg-10" style="background-color: var(--background);">
+            <button id="mytoggleButton" class=" btn btn-primary"><i class="fa-solid fa-bars text-white"></i></button>
+            @yield('content')        
+        </main>
+    </div>
     
     @include('scripts')
     @yield('script')

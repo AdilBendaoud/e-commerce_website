@@ -13,13 +13,14 @@
 
 <script>
     let table = new DataTable('#myTable');
+    const tb = document.getElementById("myTable_wrapper").children[1].classList.add("table-responsive");
 </script>
 @if(Session::has('success'))
     <script>
         toastr.options =
         {
             "closeButton" : true,
-            "progressBar" : true
+            "progressBar" : true,
         }
                 toastr.success("{{ Session::get('success') }}")
     </script>

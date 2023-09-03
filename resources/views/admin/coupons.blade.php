@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <div class="mx-auto mt-5" style="width: 80%;">
+    <div class="mx-auto mt-5" style="width: 85%;">
         <div class="flex justify-between align-items-center px-2 mb-3">
             <h1 class="text-2xl" style="font-weight:bold;">All Coupons</h1>
             <button class="btn btn-primary" data-toggle="modal" data-target="#addCouponModal"> 
