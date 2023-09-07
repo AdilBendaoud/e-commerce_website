@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 mb-3">Discover the Beauty of Pure <span style="color: var(--primary);">Argan Oil.</span></h1>
+                                <h1 class="h1 mb-3">Discover the Beauty of Pure <span style="color: var(--primary);">Argan</span><span style="color: var(--secondary);"> Oil.</span></h1>
                                 <h3 class="h2">Experience Nourished Skin and Silky Hair with Our Premium Argan Oil.</h3>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Unlock <span style="color: var(--primary);">Radiant Beauty</span> with Our Argan Oil Elixir</h1>
+                                <h1 class="h1">Unlock <span style="color: var(--primary);">Radiant</span><span style="color: var(--secondary);"> Beauty</span> with Our Argan Oil Elixir</h1>
                                 <h3 class="h2">Experience the Luxurious Transformation of Skin and Hair</h3>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Discover Nature's Secret to <span style="color: var(--primary);">Ageless Beauty</span></h1>
+                                <h1 class="h1">Discover Nature's Secret to <span style="color: var(--primary);">Ageless</span><span style="color: var(--secondary);"> Beauty</span></h1>
                                 <h3 class="h2">Harness the Power of 100% Pure Moroccan ghassoul</h3>
                             </div>
                         </div>

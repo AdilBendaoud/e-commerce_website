@@ -49,7 +49,7 @@ class HomeController extends Controller
                                             JOIN orders on orders.id = order_product.order_id
                                             WHERE YEAR(order_date) = YEAR(CURRENT_DATE)
                                             AND MONTH(order_date) = MONTH(CURRENT_DATE)
-                                            GROUP BY categories.id");
+                                            GROUP BY categories.id , categories.name");
             $salesByCategoryLabel = [];
             $salesByCategoryData = [];
             

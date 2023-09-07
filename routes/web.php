@@ -75,3 +75,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
         Route::post('/{order}/shipped',[OrderController::class,'switchStatusShipped'])->name('shipped');
     });
 });
+
+Route::get('/send_email', 'SendEmailController@index');
+Route::post('/sendemail/send', 'SendEmailController@send');
+
