@@ -11,6 +11,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\stripeController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\EmailController;
+
+
 
 Route::get('/', [HomeController::class,'userHome'])->name('/');
 Route::get('/about', function(){return view('user.about');})->name('/about');
@@ -76,6 +79,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
     });
 });
 
-Route::get('/send_email', 'SendEmailController@index');
-Route::post('/sendemail/send', 'SendEmailController@send');
+Route::get('/email', [EmailController::class, 'create']);
+Route::post('/email', [EmailController::class, 'sendEmail'])->name('send.email');
+
 
